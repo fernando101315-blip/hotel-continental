@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hotel Continental · Nuevo Chimbote</title>
+  <meta name="description" content="Hotel Continental en Nuevo Chimbote: comodidad y tranquilidad para familias, turistas y empresas. Habitaciones desde S/ 60, cochera privada y Wi‑Fi de alta velocidad.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <a href="#inicio" class="brand">Hotel <em>Continental</em></a>
+  <nav class="nav-links" aria-label="Principal">
+    <a href="#servicios">Servicios</a>
+    <a href="#habitaciones">Habitaciones</a>
+    <a href="#empresas">Empresas</a>
+    <a href="#ubicacion">Ubicación</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+  <a href="#" class="btn btn-sm" data-whatsapp>Reservar</a>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero" id="inicio">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow reveal">Nuevo Chimbote · Áncash, Perú</p>
+        <h1 class="reveal">Tu descanso en <em>Nuevo Chimbote</em>.</h1>
+        <p class="lead reveal">Comodidad, tranquilidad y atención personalizada para familias, turistas y profesionales que viajan por trabajo, a pasos de la Plaza Mayor.</p>
+
+        <form class="booking reveal" id="booking" novalidate>
+          <label><span>Llegada</span><input type="date" name="checkin" required></label>
+          <label><span>Salida</span><input type="date" name="checkout" required></label>
+          <label>
+            <span>Huéspedes</span>
+            <select name="guests">
+              <option>1 persona</option>
+              <option selected>2 personas</option>
+              <option>3 personas</option>
+              <option>4 personas</option>
+              <option>Más de 4</option>
+            </select>
+          </label>
+          <button type="submit" class="btn btn-wa">
+            <svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 12 24a11.9 11.9 0 0 0 8.5-20.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4A9.800 9.800 0 1 1 12 21.800zm5.400-7.300c-.3-.1-1.700-.8-2-.9s-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.800-1.500.1-.2 0-.4 0-.5l-.9-2.100c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.200 2.800 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.700 5c2.100.9 2.900.9 3.400.8a2.900 2.900 0 0 0 1.900-1.300 2.400 2.400 0 0 0 .2-1.300c-.1-.1-.3-.2-.6-.3z"/></svg>
+            Reservar por WhatsApp
+          </button>
+        </form>
+        <p class="form-msg" id="booking-msg" role="status"></p>
+      </div>
+
+      <figure class="facade reveal">
+        <div class="facade-placeholder" aria-hidden="true">
+          <svg viewBox="0 0 24 24" class="ico-lg"><path d="M3 21V8l9-5 9 5v13h-6v-6H9v6H3z" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linejoin="round"/></svg>
+          <span>Foto de la fachada próximamente</span>
+        </div>
+        <img src="fachada.jpeg" width="1086" height="1448" fetchpriority="high"
+             alt="Fachada del Hotel Continental iluminada al atardecer, en Nuevo Chimbote"
+             onerror="this.remove()">
+        <figcaption>Av. Anchoveta F3‑Lote 22, Urb. Miguel Grau</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- SERVICIOS -->
+  <section class="section section-tight" id="servicios">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Servicios</p>
+        <h2>Todo lo que necesitas, <em>sin complicaciones</em></h2>
+      </div>
+      <ul class="services">
+        <li class="service reveal">
+          <svg class="ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 8.8a15 15 0 0 1 20 0M5 12.5a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="19.500" r="1.200" fill="currentColor"/></svg>
+          <h3>Wi‑Fi de alta velocidad</h3><p>Conexión estable para trabajar o descansar.</p>
+        </li>
+        <li class="service reveal">
+          <svg class="ico-lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="4" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M9.500 17V7h3.200a3 3 0 0 1 0 6H9.500" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>Cochera privada</h3><p>Estacionamiento seguro para tu vehículo.</p>
+        </li>
+        <li class="service reveal">
+          <svg class="ico-lg" viewBox="0 0 24 24" aria-hidden="true"><rect x="2.500" y="5" width="19" height="12" rx="2.500" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 21h8M12 17v4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          <h3>TV</h3><p>Televisión en tu habitación.</p>
+        </li>
+        <li class="service reveal">
+          <svg class="ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Agua caliente</h3><p>Ducha confortable a cualquier hora.</p>
+        </li>
+        <li class="service reveal">
+          <svg class="ico-lg" viewBox="0 0 24 24" aria-hidden="true"><path d="M8 3 3 6v4l3 1v10h12V11l3-1V6l-5-3a4 4 0 0 1-8 0z" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/></svg>
+          <h3>Servicio de lavandería</h3><p>Ropa lista durante tu estadía.</p>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- HABITACIONES -->
+  <section class="section" id="habitaciones">
+    <div class="container">
+      <div class="section-head reveal">
+        <p class="eyebrow">Habitaciones y tarifas</p>
+        <h2>Una opción para <em>cada viaje</em></h2>
+        <p class="muted">Tarifas por noche en soles (S/). Consulta disponibilidad por WhatsApp.</p>
+      </div>
+      <div class="room-tabs reveal" id="room-tabs" role="tablist" aria-label="Tipos de habitación"></div>
+      <article class="room-panel reveal" id="room-panel" role="tabpanel" aria-live="polite"></article>
+    </div>
+  </section>
+
+  <!-- EMPRESAS -->
+  <section class="section section-alt" id="empresas">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">Para empresas</p>
+        <h2>Atención especializada para <em>tu equipo</em></h2>
+        <p class="muted">Recibimos a personal de constructoras, pesqueras y profesionales que visitan Nuevo Chimbote por trabajo. Un ambiente tranquilo para descansar, conexión Wi‑Fi para seguir conectado y cochera privada para tus vehículos.</p>
+        <a href="#" class="btn" data-whatsapp="empresa">Consultar tarifas corporativas</a>
+      </div>
+      <ul class="checks reveal">
+        <li>Habitaciones individuales, dobles, triples y cuádruples para grupos</li>
+        <li>Ambiente tranquilo para un buen descanso</li>
+        <li>Wi‑Fi de alta velocidad para trabajar</li>
+        <li>Cochera privada y servicio de lavandería</li>
+        <li>Atención directa y coordinación de estadías</li>
+        <li class="perk">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="2.500" y="4" width="19" height="11" rx="2"/><path d="M7 20l2-5M17 20l-2-5M6 20h12M8 9h8M8 12h5"/></svg>
+          <div>
+            <strong>Espacio para conferencias y reuniones</strong>
+            <span>Beneficio complementario para empresas hospedadas con nosotros.</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- UBICACIÓN -->
+  <section class="section" id="ubicacion">
+    <div class="container split">
+      <div class="reveal">
+        <p class="eyebrow">Ubicación</p>
+        <h2>Cerca de la <em>Plaza Mayor</em></h2>
+        <p class="muted">En una zona tranquila y bien conectada de Nuevo Chimbote, cerca de la Plaza Mayor, comercios y restaurantes.</p>
+        <ul class="facts">
+          <li><strong>Dirección</strong><span>Av. Anchoveta F3‑Lote 22, Urb. Miguel Grau, Nuevo Chimbote 02711</span></li>
+          <li><strong>WhatsApp</strong><span><a href="#" data-whatsapp class="link">+51 950 698 621</a></span></li>
+        </ul>
+        <a class="btn btn-map" target="_blank" rel="noopener noreferrer"
+           href="https://maps.app.goo.gl/QmxnDyCZeyCJrwp9A"><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a7 7 0 0 0-7 7c0 5 7 13 7 13s7-8 7-13a7 7 0 0 0-7-7zm0 9.500A2.500 2.500 0 1 1 12 6.500a2.500 2.500 0 0 1 0 5z"/></svg>Abrir en Google Maps<span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+      <div class="map reveal">
+        <img src="mapa.png" width="1448" height="1086" loading="lazy" alt="Mapa de la ubicación del Hotel Continental en Nuevo Chimbote">
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section class="section section-alt" id="contacto">
+    <div class="container contact">
+      <div class="section-head reveal">
+        <p class="eyebrow">Contacto</p>
+        <h2>Escríbenos, <em>con gusto</em> te ayudamos</h2>
+        <p class="muted">WhatsApp: <a href="#" data-whatsapp class="link">+51 950 698 621</a></p>
+      </div>
+      <form class="contact-form reveal" id="contact" novalidate>
+        <div class="row">
+          <label><span>Nombre</span><input type="text" name="nombre" required autocomplete="name"></label>
+          <label><span>Empresa (opcional)</span><input type="text" name="empresa" autocomplete="organization"></label>
+        </div>
+        <label><span>Mensaje</span><textarea name="mensaje" rows="5" required></textarea></label>
+        <button type="submit" class="btn btn-wa">Enviar por WhatsApp</button>
+        <p class="form-msg" id="contact-msg" role="status"></p>
+      </form>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="container footer-inner">
+    <span class="brand">Hotel <em>Continental</em></span>
+    <span>© <span id="year"></span> Hotel Continental · Nuevo Chimbote, Perú</span>
+  </div>
+</footer>
+
+<a href="#" class="fab" data-whatsapp aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" class="ico"><path d="M20.5 3.5A11.8 11.8 0 0 0 12 0 11.9 11.9 0 0 0 1.7 17.8L0 24l6.4-1.7A11.9 11.9 0 0 0 12 24a11.9 11.9 0 0 0 8.5-20.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.800 1 1-3.700-.2-.4A9.800 9.800 0 1 1 12 21.800zm5.400-7.300c-.3-.1-1.700-.8-2-.9s-.5-.1-.7.1l-.9 1.100c-.2.200-.3.200-.6.100a8 8 0 0 1-4-3.500c-.3-.5.300-.5.800-1.500.1-.2 0-.4 0-.5l-.9-2.100c-.2-.6-.5-.5-.7-.5h-.6a1.200 1.200 0 0 0-.9.400 3.700 3.700 0 0 0-1.200 2.800 6.400 6.400 0 0 0 1.400 3.400 14.700 14.700 0 0 0 5.700 5c2.100.9 2.900.9 3.400.8a2.900 2.900 0 0 0 1.900-1.300 2.400 2.400 0 0 0 .2-1.300c-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
