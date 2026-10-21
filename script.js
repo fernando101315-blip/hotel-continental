@@ -7,33 +7,35 @@ const CONFIG = {
   defaultMessage: 'Hola, deseo consultar disponibilidad y precios para el Hotel Continental.',
 };
 
-/* Servicios comunes a todas las habitaciones (ids de AMENITY_ICONS). */
+/* Servicios comunes a todas las habitaciones (ids de ICONS). */
 const ROOM_AMENITIES = [
   { icon: 'wifi',    label: 'Wi‑Fi de alta velocidad' },
-  { icon: 'tv',      label: 'TV' },
+  { icon: 'ac',      label: 'Aire acondicionado' },
+  { icon: 'tv',      label: 'Smart TV de 50"' },
   { icon: 'water',   label: 'Agua caliente' },
-  { icon: 'laundry', label: 'Servicio de lavandería' },
-  { icon: 'parking', label: 'Cochera privada' },
+  { icon: 'parking', label: 'Cochera cubierta y segura' },
 ];
+const LAUNDRY = { icon: 'laundry', label: 'Servicio de lavandería' };
+const JACUZZI = { icon: 'water',   label: 'Jacuzzi y ducha' };
+/* Extras por habitación: la de S/ 60 no incluye lavandería. */
+const roomAmenities = (r) => [...ROOM_AMENITIES, ...(r.price > 60 ? [LAUNDRY] : []), ...(r.jacuzzi ? [JACUZZI] : [])];
 
 /* Fotos: una imagen por habitación en la carpeta raíz (<archivo>.jpg).
    Para añadir más fotos a una habitación, agrega más nombres al arreglo y se activa la galería. */
 const photos = (file) => [`${file}.jpg`];
 const ROOMS = [
-  { id: 'individual',   name: 'Individual',          price: 60,  guests: 1, bed: '1 cama',             tone: '#d9b998', photos: photos('individual'),
-    desc: 'Una habitación sencilla y silenciosa, ideal para viajeros solos y profesionales que buscan descansar bien.' },
+  { id: 'individual',   name: 'Individual',          price: 60,  guests: 1, bed: '1 cama de 2 plazas',   tone: '#d9b998', photos: photos('individual'),
+    desc: 'Habitación con 1 cama de 2 plazas, sencilla y silenciosa, ideal para viajeros solos y profesionales que buscan descansar bien.' },
   { id: 'matrimonial',  name: 'Matrimonial Simple',  price: 70,  guests: 2, bed: 'Cama matrimonial',   tone: '#e0b48f', photos: photos('matrimonial-simple'),
     desc: 'Cama matrimonial para una estadía tranquila en pareja, con todo lo necesario para sentirte en casa.' },
   { id: 'ejecutiva',    name: 'Ejecutiva',           price: 90,  guests: 2, bed: 'Cama matrimonial',   tone: '#c98a5e', photos: photos('ejecutiva'),
     desc: 'Más espacio y confort para viajes de trabajo, pensada para el personal de empresas.' },
+  { id: 'premium',      name: 'Premium',             price: 140, guests: 2, bed: 'Cama matrimonial',   tone: '#b5683a', photos: photos('premium'), jacuzzi: true,
+    desc: 'Nuestra habitación de mayor comodidad, para quienes quieren una estadía más especial.' },
   { id: 'doble',        name: 'Doble (2 camas)',     price: 110, guests: 2, bed: '2 camas',            tone: '#d8c3a5', photos: photos('doble'),
     desc: 'Dos camas independientes, perfecta para compañeros de viaje o para familias pequeñas.' },
-  { id: 'premium',      name: 'Premium',             price: 140, guests: 2, bed: 'Cama matrimonial',   tone: '#b5683a', photos: photos('premium'),
-    desc: 'Nuestra habitación de mayor comodidad, para quienes quieren una estadía más especial.' },
   { id: 'triple',       name: 'Triple (3 camas)',    price: 145, guests: 3, bed: '3 camas',            tone: '#a98467', photos: photos('triple'),
     desc: 'Tres camas para grupos pequeños o familias que prefieren estar juntos.' },
-  { id: 'cuadruple',    name: 'Cuádruple (4 camas)', price: 170, guests: 4, bed: '4 camas',            tone: '#8f6a4f', photos: photos('cuadruple'),
-    desc: 'Cuatro camas, ideal para equipos de trabajo y familias grandes.' },
 ];
 
 const ICONS = {
@@ -41,6 +43,7 @@ const ICONS = {
   bed:     '<path d="M3 18V7M3 14h18v4M21 14v-2a3 3 0 0 0-3-3h-7v5"/><circle cx="7" cy="11" r="1.500"/>',
   wifi:    '<path d="M2 8.800a15 15 0 0 1 20 0M5 12.500a10 10 0 0 1 14 0M8.500 16a5 5 0 0 1 7 0"/><circle cx="12" cy="19.500" r="1" />',
   tv:      '<rect x="2.500" y="5" width="19" height="12" rx="2.500"/><path d="M8 21h8M12 17v4"/>',
+  ac:      '<path d="M12 2v20M4.500 6.500l15 11M19.500 6.500l-15 11M9 3.500l3 2 3-2M9 20.500l3-2 3 2"/>',
   water:   '<path d="M12 3s6 6.500 6 11a6 6 0 0 1-12 0c0-4.500 6-11 6-11z"/>',
   laundry: '<path d="M8 3 3 6v4l3 1v10h12V11l3-1V6l-5-3a4 4 0 0 1-8 0z"/>',
   parking: '<rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9.500 17V7h3.200a3 3 0 0 1 0 6H9.500"/>',
@@ -126,7 +129,7 @@ function roomPanelHTML(r) {
         <div class="spec">${icon('bed')}<small>Tipo de cama</small><strong>${r.bed}</strong></div>
       </div>
       <h4>Servicios de la habitación</h4>
-      <ul class="amenities">${ROOM_AMENITIES.map((a) => `<li>${icon(a.icon)}${a.label}</li>`).join('')}</ul>
+      <ul class="amenities">${roomAmenities(r).map((a) => `<li>${icon(a.icon)}${a.label}</li>`).join('')}</ul>
       <div class="room-cta">
         <span class="price">S/ ${r.price} <small>por noche</small></span>
         <a href="#" class="btn btn-reserve" data-whatsapp data-room="${r.name}">Reservar</a>
@@ -265,6 +268,15 @@ function bindUI() {
     el.style.transitionDelay = `${(i % 4) * 80}ms`;
     io.observe(el);
   });
+}
+
+/* Video de fondo en cámara lenta */
+const bannerVideo = document.querySelector('.video-frame video');
+if (bannerVideo) {
+  const slow = () => { bannerVideo.playbackRate = 0.5; };
+  slow();
+  bannerVideo.addEventListener('loadedmetadata', slow);
+  bannerVideo.addEventListener('play', slow);
 }
 
 renderRooms();

@@ -1,4 +1,4 @@
-:root {
+﻿:root {
   --bg: #faf6f0;
   --bg-alt: #f2eadf;
   --surface: #ffffff;
@@ -116,7 +116,7 @@ input, select, textarea {
 .facade figcaption {
   position: absolute; left: 16px; right: 16px; bottom: 16px; padding: 10px 16px;
   background: rgba(250, 246, 240, .85); backdrop-filter: blur(10px);
-  border-radius: 999px; font-size: .8rem; text-align: center;
+  border-radius: 999px; font-size: .72rem; text-align: center; white-space: nowrap;
 }
 
 /* Sections */
@@ -131,7 +131,7 @@ input, select, textarea {
 .split .btn:not(.btn-ghost) { margin-top: 28px; }
 
 /* Servicios */
-.services { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+.services { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
 .service {
   background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px;
   transition: transform .4s var(--ease), box-shadow .4s var(--ease);
@@ -235,7 +235,7 @@ input, select, textarea {
 .checks .perk strong { display: block; font-size: .95rem; font-weight: 600; }
 .checks .perk span { display: block; font-size: .85rem; color: var(--muted); }
 
-/* Ubicación */
+/* UbicaciÃ³n */
 .facts { list-style: none; padding: 0; margin: 32px 0 0; display: grid; gap: 18px; }
 .facts li { display: flex; flex-direction: column; padding-top: 18px; border-top: 1px solid var(--line); }
 .facts strong { font-size: .75rem; text-transform: uppercase; letter-spacing: .12em; color: var(--muted); }
@@ -297,3 +297,14 @@ textarea { resize: vertical; }
   * { transition: none !important; scroll-behavior: auto !important; }
   .reveal { opacity: 1; transform: none; }
 }
+
+/* ---------- Identidad local ---------- */
+.history { max-width: 760px; }
+.history .section-head { margin-bottom: 32px; }
+
+/* Video institucional */
+.video-frame { width: 100%; max-width: 900px; margin: 48px auto 0; border-radius: 20px; overflow: hidden; background: #000; box-shadow: 0 20px 50px rgba(42, 33, 27, .18); }
+.video-frame video { display: block; width: 100%; height: auto; }
+.history-body { border-left: 2px solid var(--accent); padding-left: 28px; }
+.history-body p { margin: 0 0 18px; color: var(--muted); font-size: 1.05rem; line-height: 1.75; }
+.history-body .history-note { font-family: 'Fraunces', serif; font-size: 1.2rem; color: var(--ink); margin-bottom: 0; }
